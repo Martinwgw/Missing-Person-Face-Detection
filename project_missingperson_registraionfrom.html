@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing Person Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            padding-right: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border-top: 6px solid #007bff;
+        }
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333333;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="date"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        input[type="text"]:focus, input[type="date"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Missing Person Registration Form</h2>
+        <form action="/submit_missing_person" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <input type="text" id="gender" name="gender" required>
+            </div>
+            <div class="form-group">
+                <label for="last_seen">Last Seen Location:</label>
+                <input type="text" id="last_seen" name="last_seen" required>
+            </div>
+            <div class="form-group">
+                <label for="date_missing">Date Missing:</label>
+                <input type="date" id="date_missing" name="date_missing" required>
+            </div>
+            <!-- <div class="form-group">
+                <label for="contact_person">Contact Person Name:</label>
+                <input type="text" id="contact_person" name="contact_person" required>
+            </div>
+            <div class="form-group">
+                <label for="contact_email">Contact Person Email:</label>
+                <input type="email" id="contact_email" name="contact_email" required>
+            </div> -->
+            <div class="form-group">
+                <label for="description">Description of the Person:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <!-- <div class="form-group">
+                <label for="additional_info">Additional Information:</label>
+                <textarea id="additional_info" name="additional_info" rows="4"></textarea>
+            </div> -->
+            <div class="form-group">
+                <label for="photo">Upload Photo(s):</label>
+                <input type="file" id="photo" name="photo" accept="image/*" multiple>
+            </div>
+            <div class="form-group">
+                <label for="video">Upload Video(s):</label>
+                <input type="file" id="video" name="video" accept="video/*" multiple>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
